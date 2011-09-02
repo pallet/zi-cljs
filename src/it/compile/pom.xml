@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.cloudhoist.plugin.test</groupId>
+  <artifactId>zi-compile-test</artifactId>
+  <version>test</version>
+  <packaging>jar</packaging>
+  <name>compile-test</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.cloudhoist.plugin</groupId>
+        <artifactId>zi-cljs</artifactId>
+        <version>@project.version@</version>
+        <executions>
+          <execution>
+            <id>default-compile</id>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <outputFileName>cljsapp.js</outputFileName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- <plugin> -->
+        <!-- disable the java compile -->
+      <!--   <artifactId>maven-compiler-plugin</artifactId> -->
+      <!--   <version>2.3.2</version> -->
+      <!--   <configuration> -->
+      <!--     <skip>true</skip> -->
+      <!--   </configuration> -->
+      <!-- </plugin> -->
+    </plugins>
+  </build>
+
+  <dependencies>
+  </dependencies>
+</project>
