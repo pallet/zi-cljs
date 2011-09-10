@@ -11,6 +11,7 @@ import org.codehaus.plexus.compiler.util.scan.SimpleSourceInclusionScanner;
 import org.codehaus.plexus.compiler.util.scan.SourceInclusionScanner;
 import org.codehaus.plexus.compiler.util.scan.StaleSourceScanner;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -153,6 +154,8 @@ public class ClojureScriptCompilerMojo
   {
     forwardCompilerId();
     addClojureScriptCompileSourceRoots();
+    (new File((new File(getOutputFileName)).getParent())).mkdirs();
+    getOutputDirectory().mkdirs();
     super.execute();
   }
 }
