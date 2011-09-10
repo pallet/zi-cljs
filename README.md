@@ -90,6 +90,51 @@ The compile goal AOT compiles clojurescript source with the closure compiler..
     </build>
 ```
 
+## compile
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>outputFileName</td>
+    <td>${project.build.finalName}</td>
+    <td>The target file name</td>
+  </tr>
+  <tr>
+    <td>outputDirectory</td>
+    <td>${project.build.outputDirectory}</td>
+    <td>The output directory</td>
+  </tr>
+  <tr>
+    <td>outputDirectory</td>
+    <td>${project.build.outputDirectory}</td>
+    <td>The output directory</td>
+  </tr>
+  <tr>
+    <td>debug</td>
+    <td>true</td>
+    <td>Sets the :optimisation to nil if true (overrides optimize)</td>
+  </tr>
+  <tr>
+    <td>optimize</td>
+    <td>false</td>
+    <td>Sets the :optimisation to :advanced if true</td>
+  </tr>
+  <tr>
+    <td>verbose</td>
+    <td>false</td>
+    <td>Sets :pretty-print to true</td>
+  </tr>
+  <tr>
+    <td>targetVersion</td>
+    <td></td>
+    <td>Sets :targer to the keywordised value</td>
+  </tr>
+</table>
+
 ## Zi, the builder
 
 Zi was a builder in [northern mythology](http://www.pitt.edu/~dash/mbuilder.html#eckwadt).
