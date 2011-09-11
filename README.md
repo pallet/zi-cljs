@@ -13,6 +13,7 @@ It requires maven 3.0.3.
 ## Available goals
 
  * zi-cljs:compile
+ * zi-cljs:browser
 
 ## Install
 
