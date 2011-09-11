@@ -45,6 +45,13 @@
             </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.cloudhoist</groupId>
+            <artifactId>clojure-maven-mojo-descriptor-extractor</artifactId>
+            <version>${clojureMavenVersion}</version>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -155,16 +162,16 @@
       <version>${mavenVersion}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.sonatype.aether</groupId>
-      <artifactId>aether-api</artifactId>
-      <version>${aetherVersion}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.sonatype.aether</groupId>
-      <artifactId>aether-util</artifactId>
-      <version>${aetherVersion}</version>
-    </dependency>
+    <!-- <dependency> -->
+    <!--   <groupId>org.sonatype.aether</groupId> -->
+    <!--   <artifactId>aether-api</artifactId> -->
+    <!--   <version>${aetherVersion}</version> -->
+    <!-- </dependency> -->
+    <!-- <dependency> -->
+    <!--   <groupId>org.sonatype.aether</groupId> -->
+    <!--   <artifactId>aether-util</artifactId> -->
+    <!--   <version>${aetherVersion}</version> -->
+    <!-- </dependency> -->
 
     <dependency>
       <groupId>org.cloudhoist</groupId>
@@ -186,6 +193,12 @@
       <groupId>org.cloudhoist</groupId>
       <artifactId>clojurescript-maven-plexus-compiler</artifactId>
       <version>${clojureMavenVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.cloudhoist</groupId>
+      <artifactId>cljs</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
     <dependency>

@@ -109,11 +109,6 @@ The compile goal AOT compiles clojurescript source with the closure compiler..
     <td>The output directory</td>
   </tr>
   <tr>
-    <td>outputDirectory</td>
-    <td>${project.build.outputDirectory}</td>
-    <td>The output directory</td>
-  </tr>
-  <tr>
     <td>debug</td>
     <td>true</td>
     <td>Sets the :optimisation to nil if true (overrides optimize)</td>
@@ -132,6 +127,33 @@ The compile goal AOT compiles clojurescript source with the closure compiler..
     <td>targetVersion</td>
     <td></td>
     <td>Sets :targer to the keywordised value</td>
+  </tr>
+</table>
+
+## browser
+
+Start a repl running on a browser.
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>port</td>
+    <td>browser.port</td>
+    <td>The port that the REPL server process should run on</td>
+  </tr>
+  <tr>
+    <td>mainNamespace</td>
+    <td>${project.name}</td>
+    <td>The namespace to be required by the REPL</td>
+  </tr>
+  <tr>
+    <td>outputDirectory</td>
+    <td>${project.build.outputDirectory}</td>
+    <td>The output directory</td>
   </tr>
 </table>
 

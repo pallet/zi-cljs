@@ -154,7 +154,7 @@ public class ClojureScriptCompilerMojo
   {
     forwardCompilerId();
     addClojureScriptCompileSourceRoots();
-    (new File((new File(getOutputFileName)).getParent())).mkdirs();
+    // (new File((new File(getOutputFileName())).getParent())).mkdirs();
     getOutputDirectory().mkdirs();
     super.execute();
   }
