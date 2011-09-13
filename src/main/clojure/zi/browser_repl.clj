@@ -13,10 +13,8 @@
     org.apache.maven.plugin.Mojo
     org.apache.maven.plugin.MojoExecutionException))
 
-
 (defn write-html
-  "Write an html file for the browser. This would be nicer using hiccup or
-   enlive"
+  "Write an html file for the browser."
   [dir f main-ns]
   (let [html (slurp (io/resource "browser.html"))]
     (.. (File. dir) mkdirs)
@@ -41,9 +39,13 @@
    main-namespace]
 
   (let [source-paths (->
-                      (core/clojure-source-paths source-directory)
+                      (core/clojure-source-paths
+                       source-directory "clojurescript")
                       (into (core/clojure-source-paths test-source-directory)))
-        classpath-elements (-> (vec test-classpath-elements))
+        classpath-elements (->
+                            source-paths
+                            (conj output-directory)
+                            (into test-classpath-elements))
         cl (core/classloader-for
             (core/classpath-with-source-jars classpath-elements))]
     (write-html output-directory output-file-name main-namespace)
@@ -51,13 +53,16 @@
     (.debug log (format "classpath elements: %s" (vec classpath-elements)))
     (classlojure/eval-in
      cl
-     `(do (require '[cljs.repl :as repl])
-          (require '[cljs.repl.browser :as browser])))
+     `(do
+        (require '[clojure.main :as main])
+        (require '[cljs.repl :as repl])
+        (require '[cljs.repl.browser :as browser])))
     (.debug log "cljs.repl loaded")
     (classlojure/eval-in
      cl
      `(fn [in# out# err#]
         (binding [*in* in# *out* out# *err* err#]
-          (def ~'env ((ns-resolve '~'cljs.repl.browser '~'repl-env)))
-          ((ns-resolve '~'cljs.repl '~'repl) ~'env)))
+          (clojure.main/with-bindings
+            (def ~'env ((ns-resolve '~'cljs.repl.browser '~'repl-env)))
+            ((ns-resolve '~'cljs.repl '~'repl) ~'env))))
      *in* *out* *err*)))
