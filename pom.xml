@@ -198,7 +198,7 @@
     <dependency>
       <groupId>org.cloudhoist</groupId>
       <artifactId>cljs</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>0.1.0</version>
     </dependency>
 
     <dependency>
@@ -305,6 +305,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <mavenVersion>3.0.3</mavenVersion>
     <aetherVersion>1.11</aetherVersion>
-    <clojureMavenVersion>0.2.1-SNAPSHOT</clojureMavenVersion>
+    <clojureMavenVersion>0.3.0</clojureMavenVersion>
   </properties>
 </project>
