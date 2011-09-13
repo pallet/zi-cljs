@@ -91,7 +91,7 @@ The compile goal AOT compiles clojurescript source with the closure compiler..
         <plugin>
           <groupId>org.cloudhoist.plugin</groupId>
           <artifactId>zi-cljs</artifactId>
-          <version>0.1.0-SNAPSHOT</version>
+          <version>0.1.0</version>
           <executions>
             <execution>
               <id>default-compile</id>
