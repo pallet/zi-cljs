@@ -6,9 +6,23 @@ It uses the maven pom `sourceDirectory` and `testSourceDirectory` settings to
 locate source, which by default means that it uses `src/main/clojurescript` and
 `src/test/clojurescript`.
 
-From an implementation perspecitve, most of the goals are written in clojure.
-
 It requires maven 3.0.3.
+
+This is alpha quality at present.
+
+## Philosophy
+
+Why build something that Rich Hickey said he hopes he would never see? The
+ClojureScript compile runs on the JVM, so jars are the natural packaging for use
+with it.  While support for clojurescript in
+[leiningen](https://github.com/technomancy/leiningen) would be very nice, it
+isn't there yet, and it wasn't clear (to me at least) how to add it to the
+current version.
+
+`zi-cljs` is intended to be used in module containing just the clojurescript
+code, so that the classpath is spearate from the classpath of the server side
+of your project.  This also allows a disintiction in the Clojure version
+used for compiling ClojureScript, and the Clojure version used on the server.
 
 ## Available goals
 
@@ -133,7 +147,9 @@ The compile goal AOT compiles clojurescript source with the closure compiler..
 
 ## browser
 
-Start a repl running on a browser.
+Start a repl for running on a browser.  The goal writes a `browser.html` file in
+the target directory, and this should be loaded in the browser to connect to the
+repl server started by this goal.
 
 <table>
   <tr>
