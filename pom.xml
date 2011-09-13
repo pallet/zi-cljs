@@ -9,7 +9,7 @@
 
   <groupId>org.cloudhoist.plugin</groupId>
   <artifactId>zi-cljs</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
   <name>zi-cljs</name>
