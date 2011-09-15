@@ -41,6 +41,8 @@
   (let [source-paths (->
                       (core/clojure-source-paths
                        source-directory "clojurescript")
+                      (core/clojure-source-paths
+                       source-directory "clojure")
                       (into (core/clojure-source-paths test-source-directory)))
         classpath-elements (->
                             source-paths
