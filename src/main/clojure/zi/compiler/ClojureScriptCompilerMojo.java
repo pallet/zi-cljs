@@ -95,6 +95,7 @@ public class ClojureScriptCompilerMojo
       if (srcDir.endsWith("/java"))
       {
         newRoots.add(srcDir.substring(0, srcDir.length()-4) + "clojurescript");
+        newRoots.add(srcDir.substring(0, srcDir.length()-4) + "clojure");
       }
     }
     for (String srcDir : newRoots)
