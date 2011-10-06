@@ -38,12 +38,12 @@
    ^String
    main-namespace]
 
-  (let [source-paths (->
+  (let [source-paths (concat
                       (core/clojure-source-paths
                        source-directory "clojurescript")
                       (core/clojure-source-paths
                        source-directory "clojure")
-                      (into (core/clojure-source-paths test-source-directory)))
+                      (core/clojure-source-paths test-source-directory))
         classpath-elements (->
                             source-paths
                             (conj output-directory)
